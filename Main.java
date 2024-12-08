@@ -58,16 +58,17 @@ public class Main {
         int palindromes = 0;
         int length = 0;
         int half = 0;
-        String test = "amongus";
         String backwards = "";
-        //while(p.hasNext()) {
-            length = test.length();
+        while(p.hasNext()) {
+            length = p.next().length();
             half = length / 2;
-            for(int i=length; i<half; i--) {
-                backwards += test.charAt(i);
+            for(int i=length-1; i>=length-half; i--) {
+                backwards += p.next().charAt(i);
             }
-            System.out.println(backwards);
-        //}
+            if(p.next().substring(0, half).equals(backwards)) {
+                palindromes++;
+            }
+        }
         return palindromes;
     }
 }
