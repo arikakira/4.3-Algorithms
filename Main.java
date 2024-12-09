@@ -17,7 +17,7 @@ public class Main {
         s.close();
         System.out.println(longestWords);
         l.close();
-        System.out.println(palindromes);
+        System.out.println("palindromes = " + palindromes);
         p.close();
     }
 
@@ -59,13 +59,16 @@ public class Main {
         int length = 0;
         int half = 0;
         String backwards = "";
+        String current = "";
         while(p.hasNext()) {
-            length = p.next().length();
+            backwards = "";
+            current = p.next();
+            length = current.length();
             half = length / 2;
             for(int i=length-1; i>=length-half; i--) {
-                backwards += p.next().charAt(i);
+                backwards += current.charAt(i);
             }
-            if(p.next().substring(0, half).equals(backwards)) {
+            if(current.substring(0, half).equals(backwards)) {
                 palindromes++;
             }
         }
