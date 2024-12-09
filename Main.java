@@ -48,8 +48,6 @@ public class Main {
                 longestWords++;
             }
         }
-        System.out.println(longest);
-        System.out.println(length);
         return longestWords;
     }
 
